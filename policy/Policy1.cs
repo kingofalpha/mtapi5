@@ -28,7 +28,7 @@ namespace test
             }
             mapHistoryQuotes[e.Quote.Instrument].Add(e.Quote);
 
-            var dig = mt.SymbolInfoDouble(e.Quote.Instrument, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_TRADE_CONTRACT_SIZE);
+            var dig = mt.SymbolInfoInteger(e.Quote.Instrument, ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD_FLOAT);
             Console.WriteLine(dig.ToString());
             
 
