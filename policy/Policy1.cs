@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MtApi5;
 using test.policy;
+using test.symbolInfo;
 
 namespace test
 {
@@ -15,22 +16,28 @@ namespace test
 
         private const int listHistoryQuotesMinSize = 200;
 
-
+        SymbolInfo s = null;
 
         public void mMtApiClient_QuoteUpdate( object sender,  Mt5QuoteEventArgs e,  MtApi5Client mt)
         {
 
+          
+           
 
-            mapQuotes[e.Quote.Instrument] = e.Quote;
             if (!mapHistoryQuotes.Keys.Contains(e.Quote.Instrument))
             {
-                mapHistoryQuotes[e.Quote.Instrument] = new List<Mt5Quote>();
+                mapHistoryQuotes.Add(e.Quote.Instrument, new List<Mt5Quote>());
+               
             }
             mapHistoryQuotes[e.Quote.Instrument].Add(e.Quote);
 
             var dig = mt.SymbolInfoInteger(e.Quote.Instrument, ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD_FLOAT);
-            Console.WriteLine(dig.ToString());
-            
+            if (null == s) {
+                 s  = new SymbolInfo(e.Quote.Instrument, mt);
+            }
+
+
+            Console.WriteLine(s.stringSymbolInfo.PAGE);
 
 
         }
@@ -72,7 +79,7 @@ namespace test
         {
             if(mt.ConnectionState == Mt5ConnectionState.Connected)
             {
-                Console.WriteLine("连接成功");
+                
             }
         }
 
