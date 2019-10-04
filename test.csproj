@@ -47,12 +47,18 @@
     <Compile Include="MTFrame.cs" />
     <Compile Include="policy\Policy1.cs" />
     <Compile Include="policy\PolicyInterface.cs" />
+    <Compile Include="Position\MangerPosition.cs" />
+    <Compile Include="Position\PoisitionInfo.cs" />
+    <Compile Include="Position\PositionDouble.cs" />
+    <Compile Include="Position\PositionInt.cs" />
+    <Compile Include="Position\PositionString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="symbolInfo\SymbolInfo.cs" />
     <Compile Include="symbolInfo\SymbolInfoDouble.cs" />
     <Compile Include="symbolInfo\SymbolInfoInt.cs" />
     <Compile Include="symbolInfo\SymbolInfoString.cs" />
+    <Compile Include="trader\Trader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

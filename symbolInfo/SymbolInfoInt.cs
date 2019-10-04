@@ -29,9 +29,6 @@ namespace test.symbolInfo
            
         }
 
-
-        
-
         private long getInt(ENUM_SYMBOL_INFO_INTEGER e)
         {
             return mt.SymbolInfoInteger(symbolName, e);
